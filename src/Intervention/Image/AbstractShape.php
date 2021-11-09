@@ -39,11 +39,13 @@ abstract class AbstractShape
      * Set text to be written
      *
      * @param  string $text
-     * @return void
+     * @return static
      */
     public function background($color)
     {
         $this->background = $color;
+
+        return $this;
     }
 
     /**
@@ -51,12 +53,14 @@ abstract class AbstractShape
      *
      * @param  int     $width
      * @param  string  $color
-     * @return void
+     * @return static
      */
     public function border($width, $color = null)
     {
         $this->border_width = is_numeric($width) ? intval($width) : 0;
         $this->border_color = is_null($color) ? '#000000' : $color;
+
+        return $this;
     }
 
     /**
